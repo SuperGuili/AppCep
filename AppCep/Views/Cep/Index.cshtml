@@ -2,11 +2,22 @@
 @{
     ViewData["Title"] = "Busca CEP";
 }
-<body>
     <div class="row">
-        <h1 class="text-center text-capitalize">Consulta de CEP</h1>
-        <div class="col-md-8 col-lg-offset-2">
-            <h2>Lista Ceps</h2>
+        <div class="col-xs-12">
+            <h1>Busca de CEP</h1>
+            <form asp-action="BuscaCep" method="get">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="cep" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" value="Buscar" class="btn btn-md btn-warning">Pesquisar</button>
+                </div>
+            </form>
+            <h2>Endereços</h2>
             <table class="table table-striped table-condensed">
                 <thead>
                     <tr>
@@ -19,43 +30,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var endereco in Model)
-                    {
-                        <tr>
-                            <td>
-                                @endereco.Cep
-                            </td>
-                            <td>
-                                @endereco.Logradouro
-                            </td>
-                            <td>
-                                @endereco.Complemento
-                            </td>
-                            <td>
-                                @endereco.Bairro
-                            </td>
-                            <td>
-                                @endereco.Localidade
-                            </td>
-                            <td>
-                                @endereco.Uf
-                            </td>
-                        </tr>
-                    }
+                    @foreach (var endereco in Model){
+                    <tr>
+                        <td>
+                            @endereco.Cep
+                        </td>
+                        <td>
+                            @endereco.Logradouro
+                        </td>
+                        <td>
+                            @endereco.Complemento
+                        </td>
+                        <td>
+                            @endereco.Bairro
+                        </td>
+                        <td>
+                            @endereco.Localidade
+                        </td>
+                        <td>
+                            @endereco.Uf
+                        </td>
+                    </tr>
+                }
                 </tbody>
             </table>
         </div>
-        <form asp-action="BuscaCep" method="get">
-            <div class="row">
-                <div class="col-md-8 col-lg-offset-2">
-                    <div class="col-xs-8 col-md-6 form-group">
-                        <input type="text" name="cep" class="form-control" />
-                    </div>
-                    <div class="col-xs-4 col-md-6 form-group">
-                        <button type="submit" value="Buscar" class="btn btn-md btn-primary">Pesquisar</button>
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
-</body>

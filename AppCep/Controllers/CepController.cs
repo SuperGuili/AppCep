@@ -7,11 +7,6 @@ using AppCep.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-// Hermano Portes
-//Jorge Jose Zattar filho
-// Leandro M. Mohr
-//Luiz Guilherme Luize Pereira
-
 namespace AppCep.Controllers
 {
     public class CepController : Controller
